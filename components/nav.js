@@ -4,8 +4,8 @@ import { CgDarkMode } from 'react-icons/cg'
 import {useTheme} from 'next-themes'
 
 const links = [
-    { label: "Home", href: "/about" },
-    { label: "About", href: "/" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Make List", href: "/makelists" },
 ]
 

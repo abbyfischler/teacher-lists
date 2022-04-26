@@ -9,15 +9,12 @@ import fetcher from '../lib/fetcher'
 
 export default function Home() {
 
-
-
   const wishlists = useSWR('/api/all', fetcher).data;
   return (
     <div className="dark:text-white dark:bg-black">
       <Nav></Nav>
       <main>
-        
-         
+
           {
             wishlists?.map(({teacherName, location, bio, link}) => (
               <div className='bg-black my-3 w-1/4 bg-opacity-50 rounded py-4 px-8'>
