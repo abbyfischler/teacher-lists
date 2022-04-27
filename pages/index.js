@@ -7,6 +7,7 @@ import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Link from 'next/link';  
 
+
 export default function Home() {
   const wishlists = useSWR("/api/all", fetcher).data;
   return (
@@ -19,7 +20,7 @@ export default function Home() {
 <section className="bg-gamboge p-10 flex flex-col justify-center">
 <h1 className="text-center text-5xl m-4">Are you a teacher who wants to add your list?</h1>
 <Link href="/makelists">
-  <button className="bg-white p-3 rounded-md text-2xl w-fitcontent mx-auto">Make lists!</button>
+  <button className="bg-white p-3 rounded-md text-2xl w-fitcontent mx-auto">Make your list here!</button>
 </Link>
 </section>
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16 my-10">
