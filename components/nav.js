@@ -15,9 +15,11 @@ export default function Nav() {
     console.log("Made by Abby Fischler Want to hire me? abbyfischler.com");
   });
   return (
-    <nav className="dark:text-white">
-      <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-8 mt-6 sm:mt-0">
-        <li>Teacher Lists!</li>
+    <nav className="dark:text-white bg-maroonx-11">
+      <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-6 mt-4 sm:mt-0">
+        <li>
+          <img src="/logo.png" className="w-28 h-28"></img>
+          </li>
         <ul className={`mx-auto sm:mx-0 flex flex-row space-x-5`}>
           {links.map(({ href, label }) => (
             <li className="self-center" key={`${href}${label}`}>

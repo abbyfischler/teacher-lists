@@ -12,4 +12,6 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
-
+.w-fitcontent {
+    width: fit-content;
+}
