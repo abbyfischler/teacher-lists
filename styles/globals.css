@@ -15,3 +15,8 @@ body{
 .w-fitcontent {
     width: fit-content;
 }
+
+.bg-orange-grad {
+    background: radial-gradient(50% 50% at 50% 50%, #06AED5 0%, #E59500 0.01%, #FFFFFF 100%);
+
+}

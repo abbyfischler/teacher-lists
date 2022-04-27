@@ -22,13 +22,13 @@ export default function Home() {
   <button className="bg-white p-3 rounded-md text-2xl w-fitcontent mx-auto">Make lists!</button>
 </Link>
 </section>
-    <section className="grid grid-cols-3 gap-8 mx-16 my-10">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16 my-10">
         {wishlists?.map(({ teacherName, location, bio, link }) => (
-          <div className="bg-black bg-opacity-50 rounded py-4 px-8">
-            <p className="font-mono">- {teacherName}</p>
-            <p className="font-mono">- {location}</p>
-            <p className="font-mono">- {bio}</p>
-            <p className="font-mono">- {link}</p>
+          <div className="flex flex-col bg-orange-grad rounded-xl py-4 px-8 text-center border border-black">
+            <p className="font-sans text-4xl font-bold">{teacherName}</p>
+            <p className="font-sans text-xl">{location}</p>
+            <p className="font-sans">{bio}</p>
+            <a href={link} className="font-sans bg-white rounded w-1/4 mx-auto p-3 m-2 align-center text-maroonx-11">Link</a>
           </div>
         
 

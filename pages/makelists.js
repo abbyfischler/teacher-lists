@@ -12,7 +12,11 @@ export default function makeLists() {
     fetch(
       `/api/create?teachername=${d.teachername}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`
     ).then((r) => alert(r.data));
+
   };
+
+
+
 
   return (
     <>
@@ -52,13 +56,17 @@ export default function makeLists() {
             type="text"
             id="wishlist"
             placeholder="amazon.com/"
-            {...register("wishlist", { required: true })}
+            {...register("wishlist", { required: true, pattern: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/ })}
           />
+         
           <input
             type="submit"
             className="bg-blue-500 text-white py-2 hover:bg-blue-600 rounded-xl font-bold"
             value="Submit"
+            disabled={formState.isValidating}
           />
+          
+          
         </form>
       </section>
     </>
