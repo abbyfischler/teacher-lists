@@ -7,7 +7,7 @@ module.exports = {
         'regal-blue': '#243c5a',
         'black':'#000000',
         'maroonx-11':'#a13d63',
-        'geruleancrayola':'0#6aed5',
+        'geruleancrayola':'#06aed5',
         'gamboge':'#e59500',
       },
     },

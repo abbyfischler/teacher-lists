@@ -21,38 +21,38 @@ export default function makeLists() {
   return (
     <>
       <Nav></Nav>
-      <section className="w-1/2 mx-auto bg-gray-200 rounded-xl p-10 mt-16">
+      <section className="w-1/2 mx-auto bg-regal-blue border-2 border-black rounded-xl p-10 mt-16">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-5"
         >
-          <label htmlFor="teacherName">Teacher Name (required)</label>
+          <label htmlFor="teacherName" className="text-gamboge">Teacher Name (required)</label>
           <input
-            className="bg-gray-200 border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
             type="text"
             id="teachername"
             placeholder="Dr. Spell"
             {...register("teachername", { required: true })}
           />
-          <label htmlFor="location">Location</label>
+          <label htmlFor="location" className="text-gamboge">Location</label>
           <input
-            className="bg-gray-200 border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
             type="text"
             id="location"
             placeholder="Los Angeles"
             {...register("location", { required: true })}
           />
-          <label htmlFor="bio">Bio</label>
+          <label htmlFor="bio" className="text-gamboge">Bio</label>
           <input
-            className="bg-gray-200 border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
             type="text"
             id="bio"
             placeholder="I am a classroom from XXXXXX"
             {...register("bio", { required: true })}
           />
-          <label htmlFor="wishlist">Wishlist link</label>
+          <label htmlFor="wishlist" className="text-gamboge">Wishlist link</label>
           <input
-            className="bg-gray-200 border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
             type="text"
             id="wishlist"
             placeholder="amazon.com/"
@@ -61,7 +61,7 @@ export default function makeLists() {
          
           <input
             type="submit"
-            className="bg-blue-500 text-white py-2 hover:bg-blue-600 rounded-xl font-bold"
+            className="bg-white text-maroonx-11 hover:bg-maroonx-11 hover:text-white rounded-xl font-bold p-3 w-1/2 mx-auto text-xl"
             value="Submit"
           />
           
