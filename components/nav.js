@@ -55,6 +55,6 @@ export default function Nav() {
         </ul>
       </ul>
     </nav>
-    </>
+  </>
   );
 }
