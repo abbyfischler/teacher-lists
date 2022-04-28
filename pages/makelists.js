@@ -6,7 +6,7 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 
-export default function makeLists() {
+export default function MakeLists() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (d) => {
     fetch(
