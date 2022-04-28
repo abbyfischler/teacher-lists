@@ -19,7 +19,7 @@ export default function MakeLists() {
   return (
     <>
       <Nav></Nav>
-      <section className="w-1/2 mx-auto bg-regal-blue border-2 border-black rounded-xl p-10 mt-16">
+      <section className="w-auto mx-6 md:mx-9 lg:w-1/2 lg:mx-auto bg-regal-blue border-2 border-black rounded-xl p-10 mt-16">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-5"
