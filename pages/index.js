@@ -45,7 +45,7 @@ export default function Home() {
               <p>{bio}</p>
               <a
                 href={link}
-                className="font-sans text-lg bg-white rounded w-fitcontent mx-auto p-3 m-2 align-center justify-center text-maroonx-11 dark:bg-black dark:text-white"
+                className="py-2 text-lg bg-white rounded w-fitcontent mx-auto p-3 m-2 align-center justify-center text-maroonx-11 dark:bg-black dark:text-white"
               >
                 Link
               </a>
