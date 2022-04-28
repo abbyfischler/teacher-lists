@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import { useEffect } from "react";
 import { CgDarkMode } from "react-icons/cg";
 import { useTheme } from "next-themes";
@@ -15,13 +16,12 @@ export default function Nav() {
     console.log("Made by Abby Fischler Want to hire me? abbyfischler.com");
   });
   return (
-    
+    <>
+    <Head> 
+    <title>Teacher Lists</title>
+    </Head>
     <nav className="dark:text-white bg-maroonx-11">
           
-        <title>Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        
-  
       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-6 mt-4 sm:mt-0">
         <li>
           <img src="/logo.png" className="w-28 h-28"></img>
@@ -55,5 +55,6 @@ export default function Nav() {
         </ul>
       </ul>
     </nav>
+    </>
   );
 }

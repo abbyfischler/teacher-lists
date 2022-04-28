@@ -7,10 +7,11 @@ import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Link from "next/link";
 
+
 export default function Home() {
+
   const wishlists = useSWR("/api/all", fetcher).data;
   return (
-    
     <div className="dark:text-white dark:bg-black">
   
       <Nav></Nav>
@@ -56,5 +57,6 @@ export default function Home() {
         </section>
       </main>
     </div>
+    </>
   );
 }
