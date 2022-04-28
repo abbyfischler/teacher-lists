@@ -24,8 +24,8 @@ export default function Home() {
 </Link>
 </section>
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16 my-10">
-        {wishlists?.map(({ teacherName, location, bio, link }) => (
-          <div className="flex flex-col bg-orange-grad rounded-xl py-4 px-8 text-center border border-black">
+        {wishlists?.map(({ teacherName, location, bio, link, id }) => (
+          <div className="flex flex-col bg-orange-grad rounded-xl py-4 px-8 text-center border border-black" key={id}>
             <p className="font-sans text-4xl font-bold">{teacherName}</p>
             <p className="font-sans text-xl">{location}</p>
             <p className="font-sans">{bio}</p>

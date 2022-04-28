@@ -6,6 +6,7 @@ const airtable = new AirtablePlus({
   tableName: "Table 1",
   camelCase: true,
   transform: (r) => {
+    r.fields["id"] = r.id;
     delete r.id;
     return r.fields;
   },
