@@ -17,7 +17,11 @@ export default function Nav() {
   return (
     
     <nav className="dark:text-white bg-maroonx-11">
-          <title>TeacherLists</title>
+          
+        <title>Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+        
+  
       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-6 mt-4 sm:mt-0">
         <li>
           <img src="/logo.png" className="w-28 h-28"></img>
