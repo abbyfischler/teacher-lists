@@ -59,6 +59,7 @@ export default function MakeLists() {
               message: "You must enter a valid link" 
               }, pattern: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/ })}
           />
+          <div>
           <ErrorMessage
             errors={errors}
             name="wishlist"
@@ -79,6 +80,7 @@ export default function MakeLists() {
             name="teacherName"
             render={({ message }) => <p className="text-red-500 font-medium">{message}</p>}
           />
+          </div>
           <input
             type="submit"
             className="bg-white text-maroonx-11 hover:bg-maroonx-11 hover:text-white rounded-xl font-bold p-3 w-1/2 mx-auto text-xl"
