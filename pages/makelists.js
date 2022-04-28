@@ -64,6 +64,7 @@ export default function MakeLists() {
             name="wishlist"
             render={({ message }) => <p className="text-red-500 font-medium">{message}</p>}
           />
+          {errors?.wishlist?.message}
           <input
             type="submit"
             className="bg-white text-maroonx-11 hover:bg-maroonx-11 hover:text-white rounded-xl font-bold p-3 w-1/2 mx-auto text-xl"
