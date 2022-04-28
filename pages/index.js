@@ -39,7 +39,7 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16 my-10">
           {wishlists?.map(({ teacherName, location, bio, link, id }) => (
             <div
-              className="flex flex-col bg-regal-blue dark:bg-gamboge rounded-xl py-4 px-8 text-center border border-black dark:text-black"
+              className="flex flex-col bg-orange-grad  dark:bg-gamboge rounded-xl py-4 px-8 text-center border border-black dark:text-black"
               key={id}
             >
               <p className="text-4xl font-bold">{teacherName}</p>
