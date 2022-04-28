@@ -9,6 +9,7 @@ module.exports = {
         'maroonx-11':'#a13d63',
         'geruleancrayola':'#06aed5',
         'gamboge':'#e59500',
+        'hpinkk': '#FF69B4',
       },
     },
   },
