@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Nav from "../components/Nav";
+import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
 import useSWR from "swr";
@@ -11,7 +11,7 @@ export default function MakeLists() {
   const onSubmit = async (d) => {
     fetch(
       `/api/create?teachername=${d.teachername}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`
-    ).then((r) => alert(r.data));
+    );
 
   };
 
@@ -56,9 +56,14 @@ export default function MakeLists() {
             type="text"
             id="wishlist"
             placeholder="amazon.com/"
-            {...register("wishlist", { required: true, pattern: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/ })}
+            {...register("wishlist", { required: { 
+              value: true, 
+              message: "You must enter a valid link" 
+              }, pattern: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/ })}
           />
-         
+          {errors.wishlist && (
+            <div className="text-red-500 font-medium">{errors.wishlist.message}</div>
+          )}
           <input
             type="submit"
             className="bg-white text-maroonx-11 hover:bg-maroonx-11 hover:text-white rounded-xl font-bold p-3 w-1/2 mx-auto text-xl"
