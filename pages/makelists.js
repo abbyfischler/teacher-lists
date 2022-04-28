@@ -1,13 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
 import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
-import useSWR from "swr";
-import fetcher from "../lib/fetcher";
+import { ErrorMessage } from '@hookform/error-message';
 
 export default function MakeLists() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: {errors} } = useForm();
+
   const onSubmit = async (d) => {
     fetch(
       `/api/create?teachername=${d.teachername}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`
@@ -61,9 +59,11 @@ export default function MakeLists() {
               message: "You must enter a valid link" 
               }, pattern: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/ })}
           />
-          {errors.wishlist && (
-            <div className="text-red-500 font-medium">{errors.wishlist.message}</div>
-          )}
+          <ErrorMessage
+            errors={errors}
+            name="wishlist"
+            render={({ message }) => <p className="text-red-500 font-medium">{message}</p>}
+          />
           <input
             type="submit"
             className="bg-white text-maroonx-11 hover:bg-maroonx-11 hover:text-white rounded-xl font-bold p-3 w-1/2 mx-auto text-xl"

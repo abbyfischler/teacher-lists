@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.0",
     "airtable-plus": "^1.0.4",
     "axios": "^0.27.0",
     "next": "12.1.5",
