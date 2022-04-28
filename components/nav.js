@@ -15,7 +15,9 @@ export default function Nav() {
     console.log("Made by Abby Fischler Want to hire me? abbyfischler.com");
   });
   return (
+    
     <nav className="dark:text-white bg-maroonx-11">
+          <title>TeacherLists</title>
       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-6 mt-4 sm:mt-0">
         <li>
           <img src="/logo.png" className="w-28 h-28"></img>
