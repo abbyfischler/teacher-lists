@@ -28,8 +28,8 @@ export default function Home() {
             teacher’s wish list!
           </p>
         </section>
-        <section className="bg-gamboge dark:bg-geruleancrayola dark:text-black p-10 flex flex-col ">
-          <h1 className="text-center text-5xl m-4">
+        <section className="bg-gamboge dark:bg-geruleancrayola justify-center dark:text-black p-10 flex flex-row ">
+          <h1 className="text-center text-5xl m-4 ">
             Are you a teacher who wants to add your list?
           </h1>
           <Link href="/makelists">
@@ -38,7 +38,7 @@ export default function Home() {
             </button>
           </Link>
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16 my-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-16 my-10">
           {wishlists?.map((props) => (
            <Card {...props} />
           ))}
