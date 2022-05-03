@@ -28,12 +28,12 @@ export default function Home() {
             teacher’s wish list!
           </p>
         </section>
-        <section className="bg-gamboge dark:bg-geruleancrayola justify-center dark:text-black p-10 flex flex-row ">
+        <section className="bg-geruleancrayola justify-center dark:text-black py-10 flex flex-row space-x-4">
           <h1 className="text-center text-5xl m-4 ">
             Are you a teacher who wants to add your list?
           </h1>
           <Link href="/makelists">
-            <button className="bg-white p-3 rounded-md text-2xl w-fitcontent mx-auto dark:text-maroonx-11 border border-black">
+            <button className="bg-white p-3 rounded-md text-2xl w-fitcontent dark:text-maroonx-11 border border-black">
               Make your list here!
             </button>
           </Link>
