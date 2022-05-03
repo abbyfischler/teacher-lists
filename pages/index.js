@@ -6,6 +6,7 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Link from "next/link";
+import Card from "../components/card";
 
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
             teacher’s wish list!
           </p>
         </section>
-        <section className="bg-gamboge dark:bg-geruleancrayola dark:text-black p-10 flex flex-col justify-center">
+        <section className="bg-gamboge dark:bg-geruleancrayola dark:text-black p-10 flex flex-col ">
           <h1 className="text-center text-5xl m-4">
             Are you a teacher who wants to add your list?
           </h1>
@@ -38,21 +39,8 @@ export default function Home() {
           </Link>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16 my-10">
-          {wishlists?.map(({ teacherName, location, bio, link, id }) => (
-            <div
-              className="flex flex-col bg-orange-grad  dark:bg-gamboge rounded-xl py-4 px-8 text-center border border-black dark:text-black"
-              key={id}
-            >
-              <p className="text-4xl font-bold">{teacherName}</p>
-              <p className="text-xl">{location}</p>
-              <p>{bio}</p>
-              <a
-                href={link}
-                className="py-2 text-lg bg-white rounded w-fitcontent mx-auto p-3 m-2 align-center justify-center text-maroonx-11 dark:bg-black dark:text-white"
-              >
-                Link
-              </a>
-            </div>
+          {wishlists?.map((props) => (
+           <Card {...props} />
           ))}
         </section>
       </main>
