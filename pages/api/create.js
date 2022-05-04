@@ -13,6 +13,7 @@ export default async (req, res) => {
       Location: req.query.location,
       Bio: req.query.bio,
       Link: req.query.wishlist,
+      Image: req.query.imageUpload,
     });
     res
       .status(200)

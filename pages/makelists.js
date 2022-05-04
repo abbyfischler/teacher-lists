@@ -12,14 +12,14 @@ export default function MakeLists() {
 
   const onSubmit = async (d) => {
     fetch(
-      `/api/create?teachername=${d.teachername}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`
-    );
+      `/api/create?teachername=${d.teachername}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}&imageUpload=${d.Image}`
+    ).then(alert(d));
   };
 
   return (
     <>
       <Nav></Nav>
-      <section className="w-auto mx-6 md:mx-9 lg:w-1/2 lg:mx-auto bg-regal-blue border-2 border-black rounded-xl p-10 mt-16">
+      <section className="w-auto mx-6 md:mx-9 lg:w-1/2 lg:mx-auto bg-geruleancrayola-grad border-2 border-black rounded-xl p-10 mt-16">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-5"
@@ -36,6 +36,16 @@ export default function MakeLists() {
               required: { value: true, message: "You need a teacher name." },
             })}
           />
+          <label htmlFor="imageUpload" className="text-gamboge">
+            <input
+              type="file"
+              className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+              id="file"
+              {...register("imageUpload", {
+                required: { value: true, message: "You need an image." },
+              })}
+            />
+          </label>
           <label htmlFor="location" className="text-gamboge">
             Location
           </label>
