@@ -8,7 +8,7 @@ export default function Card({ teacherName, location, bio, link, id }) {
           <div className="flex flex-row space-x-3 align-center">
             <img
               className="w-28 h-28 rounded-full"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/440px-Golde33443.jpg"
+              src={`https://teacher-lists.s3.us-west-1.amazonaws.com/image-${id}.png`}
             ></img>
             <div className="flex flex-col">
               <p className="text-4xl font-bold">

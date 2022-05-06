@@ -12,8 +12,8 @@ export default function MakeLists() {
 
   const onSubmit = async (d) => {
     fetch(
-      `/api/create?teachername=${d.teachername}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}&imageUpload=${d.Image}`
-    ).then(alert(d));
+      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`
+    ).then(alert(JSON.stringify(d)));
   };
 
   return (
@@ -42,7 +42,7 @@ export default function MakeLists() {
               className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
               id="file"
               {...register("imageUpload", {
-                required: { value: true, message: "You need an image." },
+                required: { value: false, message: "You need an image." },
               })}
             />
           </label>
