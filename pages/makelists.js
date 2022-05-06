@@ -1,6 +1,6 @@
 import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
-import { get as fetch } from "axios";
+import { post } from "axios";
 import { ErrorMessage } from "@hookform/error-message";
 
 export default function MakeLists() {
@@ -11,9 +11,15 @@ export default function MakeLists() {
   } = useForm();
 
   const onSubmit = async (d) => {
-    fetch(
-      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`
+    var reader = new FileReader();
+	  var file = reader.readAsBinaryString(d.imageUpload[0]);
+    console.log(file);
+      post(
+      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`, {
+          image: file,
+        }
     ).then(alert(JSON.stringify(d)));
+    
   };
 
   return (
@@ -36,16 +42,13 @@ export default function MakeLists() {
               required: { value: true, message: "You need a teacher name." },
             })}
           />
-          <label htmlFor="imageUpload" className="text-gamboge">
-            <input
+          <input
               type="file"
               className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
-              id="file"
               {...register("imageUpload", {
-                required: { value: false, message: "You need an image." },
+                required: { value: true, message: "You need an image." },
               })}
             />
-          </label>
           <label htmlFor="location" className="text-gamboge">
             Location
           </label>

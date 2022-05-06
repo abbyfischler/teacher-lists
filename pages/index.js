@@ -40,7 +40,7 @@ export default function Home() {
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-16 my-10">
           {wishlists?.map((props) => (
-           <Card {...props} />
+           <Card key={props.id} {...props} />
           ))}
         </section>
       </main>

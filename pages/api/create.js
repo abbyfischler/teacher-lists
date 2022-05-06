@@ -15,12 +15,8 @@ export default async (req, res) => {
             Bio: req.query.bio,
             Link: req.query.wishlist,
         });
-        axios.get("https://github.com/abbyfischler.png", {
-            responseType: 'arraybuffer'
-        })
-        .then((buffer) => {
-            uploadImage(buffer.data, record.id);
-        })
+        let image = req.body.image;
+        // uploadImage(stream, record.id);
         
         res.status(200).send(
             `Created record ${record.id}. Data inputed was ${JSON.stringify(
@@ -41,12 +37,12 @@ const s3 = new AWS.S3({
     secretAccessKey: process.env.AWS_CLIENT_SECRET,
 });
 
-function uploadImage(buffer, id) {
-    s3.upload(
+function uploadImage(binary, id) {
+    s3.putObject(
         {
             Bucket: BUCKET_NAME,
             Key: `image-${id}.png`,
-            Body: buffer,
+            Body: binary,
             ContentType: 'image/png',
             ACL: "public-read",
         },
