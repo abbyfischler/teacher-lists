@@ -15,8 +15,10 @@ export default async (req, res) => {
             Bio: req.query.bio,
             Link: req.query.wishlist,
         });
-        let image = req.body.image;
-        // uploadImage(stream, record.id);
+        console.log(JSON.stringify(req.body))
+        // if (image) {
+        //     uploadImage(image, record.id);
+        // }
         
         res.status(200).send(
             `Created record ${record.id}. Data inputed was ${JSON.stringify(

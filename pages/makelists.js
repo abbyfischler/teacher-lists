@@ -2,6 +2,7 @@ import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
 import { post } from "axios";
 import { ErrorMessage } from "@hookform/error-message";
+import arrayBufferToBuffer from "arraybuffer-to-buffer"
 
 export default function MakeLists() {
   const {
@@ -11,15 +12,15 @@ export default function MakeLists() {
   } = useForm();
 
   const onSubmit = async (d) => {
-    var reader = new FileReader();
-	  var file = reader.readAsBinaryString(d.imageUpload[0]);
-    console.log(file);
-      post(
+    const file = d.imageUpload[0];
+    file = await file.arrayBuffer();
+    file = arrayBufferToBuffer(file);
+    post(
       `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`, {
-          image: file,
-        }
-    ).then(alert(JSON.stringify(d)));
-    
+        image: file,
+      }
+    );
+      
   };
 
   return (
