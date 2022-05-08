@@ -7,8 +7,14 @@ const airtable = new AirtablePlus({
     tableName: "Table 1",
 });
 
+export const config = {
+    api: {
+      bodyParser: false,
+    },
+  }
+
 export default async (req, res) => {
-    if (req.query) {
+    if (req.query && req.body?.image) {
         const record = await airtable.create({
             "Teacher Name": req.query.teachername,
             Location: req.query.location,
@@ -16,9 +22,7 @@ export default async (req, res) => {
             Link: req.query.wishlist,
         });
         console.log(JSON.stringify(req.body))
-        // if (image) {
-        //     uploadImage(image, record.id);
-        // }
+        uploadImage(req.body.image, record.id);
         
         res.status(200).send(
             `Created record ${record.id}. Data inputed was ${JSON.stringify(

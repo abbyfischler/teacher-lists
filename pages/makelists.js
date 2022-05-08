@@ -1,6 +1,6 @@
 import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
-import { post } from "axios";
+import axios from "axios";
 import { ErrorMessage } from "@hookform/error-message";
 import arrayBufferToBuffer from "arraybuffer-to-buffer"
 
@@ -15,12 +15,31 @@ export default function MakeLists() {
     const file = d.imageUpload[0];
     file = await file.arrayBuffer();
     file = arrayBufferToBuffer(file);
-    post(
-      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}&wishlist=${d.wishlist}`, {
+
+    const options = {
+      method: 'POST',
+      url: '/api/create',
+      params: {
+        teachername: d.teacherName,
+        location: d.location,
+        bio: d.bio,
+        wishlist: d.wishlist,
+      },
+      data: {
         image: file,
+        _abby: "abby",
       }
-    );
-      
+    };
+    
+    
+
+    if (file) {
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
+    };
   };
 
   return (
