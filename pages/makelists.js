@@ -2,9 +2,12 @@ import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ErrorMessage } from "@hookform/error-message";
-import uploadToS3 from "next-s3-upload";
+import { useS3Upload } from "next-s3-upload";
+
 
 export default function MakeLists() {
+  let { uploadToS3 } = useS3Upload();
+
   const {
     register,
     handleSubmit,
