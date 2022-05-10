@@ -1,8 +1,4 @@
-import Head from "next/head";
-import Image from "next/image";
 import Nav from "../components/nav";
-import { useForm } from "react-hook-form";
-import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Link from "next/link";

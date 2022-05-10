@@ -16,8 +16,9 @@ export default function MakeLists() {
 
   const onSubmit = async (d) => {
     const file = d.imageUpload[0];
-    let { imageUrl } = await uploadToS3(file);
-    axios.post(`/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${imageUrl}]`);
+    let {url} = await uploadToS3(file);
+    console.log(url);
+    axios.post(`/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${url}`);
   };
 
   return (
