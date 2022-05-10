@@ -1,17 +1,12 @@
-import Nav from "../components/nav";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Link from "next/link";
 import Card from "../components/card";
 
-
 export default function Home() {
-
   const wishlists = useSWR("/api/all", fetcher).data;
   return (
     <div className="dark:text-white dark:bg-black">
-  
-      <Nav></Nav>
       <main>
         <section>
           <p className="text-center my-20  w-2/3 mx-auto text-xl m-2">
@@ -36,7 +31,7 @@ export default function Home() {
         </section>
         <section className="flex flex-wrap justify-center gap-8 mx-16 my-10">
           {wishlists?.map((props) => (
-           <Card key={props.id} {...props} />
+            <Card key={props.id} {...props} />
           ))}
         </section>
       </main>

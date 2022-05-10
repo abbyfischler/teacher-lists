@@ -1,9 +1,7 @@
-import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ErrorMessage } from "@hookform/error-message";
 import { useS3Upload } from "next-s3-upload";
-
 
 export default function MakeLists() {
   let { uploadToS3 } = useS3Upload();
@@ -16,14 +14,15 @@ export default function MakeLists() {
 
   const onSubmit = async (d) => {
     const file = d.imageUpload[0];
-    let {url} = await uploadToS3(file);
+    let { url } = await uploadToS3(file);
     console.log(url);
-    axios.post(`/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${url}`);
+    axios.post(
+      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${url}`
+    );
   };
 
   return (
     <>
-      <Nav></Nav>
       <section className="w-auto mx-6 md:mx-9 lg:w-1/2 lg:mx-auto bg-geruleancrayola-grad border-2 border-black rounded-xl p-10 mt-16">
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -42,12 +41,12 @@ export default function MakeLists() {
             })}
           />
           <input
-              type="file"
-              className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
-              {...register("imageUpload", {
-                required: { value: true, message: "You need an image." },
-              })}
-            />
+            type="file"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            {...register("imageUpload", {
+              required: { value: true, message: "You need an image." },
+            })}
+          />
           <label htmlFor="location" className="text-gamboge">
             Location
           </label>
