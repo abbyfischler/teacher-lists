@@ -2,8 +2,12 @@ import Nav from "../components/nav";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ErrorMessage } from "@hookform/error-message";
+import { useS3Upload } from "next-s3-upload";
+
 
 export default function MakeLists() {
+  let { uploadToS3 } = useS3Upload();
+
   const {
     register,
     handleSubmit,
@@ -12,21 +16,9 @@ export default function MakeLists() {
 
   const onSubmit = async (d) => {
     const file = d.imageUpload[0];
-
-    let { id } = axios.post(`/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}]`);
-
-    let { data: url } = await axios.post("/api/s3/uploadFile", {
-      name: `image-${id}`,
-      type: file.type,
-    });
-
-    let { data } = await axios.put(url, file, {
-      headers: {
-        "Content-type": file.type,
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-
+    let {url} = await uploadToS3(file);
+    console.log(url);
+    axios.post(`/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${url}`);
   };
 
   return (

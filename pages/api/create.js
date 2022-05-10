@@ -13,8 +13,8 @@ export default async (req, res) => {
             Location: req.query.location,
             Bio: req.query.bio,
             Link: req.query.wishlist,
+            Image: req.query.image
         });
-        
         res.status(200).json(
             {
                 id: record.id,

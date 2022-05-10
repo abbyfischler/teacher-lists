@@ -1,8 +1,4 @@
-import Head from "next/head";
-import Image from "next/image";
 import Nav from "../components/nav";
-import { useForm } from "react-hook-form";
-import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 import Link from "next/link";
@@ -38,7 +34,7 @@ export default function Home() {
             </button>
           </Link>
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-16 my-10">
+        <section className="flex flex-wrap justify-center gap-8 mx-16 my-10">
           {wishlists?.map((props) => (
            <Card key={props.id} {...props} />
           ))}
