@@ -1,4 +1,4 @@
-export default function Card({ teacherName, location, bio, link, image }) {
+export default function Card({ teacherName, location, bio, link, image}) {
   return (
       <>
           <div className="flex flex-col space-y-2 bg-orange-grad  dark:bg-gamboge rounded-xl py-4 px-8 border border-black dark:text-black">

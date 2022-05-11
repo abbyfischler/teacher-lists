@@ -13,6 +13,8 @@ const airtable = new AirtablePlus({
 });
 
 export default async (_, res) => {
-  const teacherInfo = await airtable.read();
+  const teacherInfo = await airtable.read({
+    sort: [{ field: "time", direction: "desc" }],
+  });
   res.json(teacherInfo);
 };
