@@ -4,7 +4,7 @@ export default function Card({ teacherName, location, bio, link, image }) {
           <div className="flex flex-col space-y-2 bg-orange-grad  dark:bg-gamboge rounded-xl py-4 px-8 border border-black dark:text-black">
               <div className="flex flex-row space-x-3 align-center">
                   <img
-                      className="w-28 h-28 rounded-full"
+                      className="w-28 h-28 object-cover rounded-full"
                       src={image}
                   ></img>
                   <div className="flex flex-col">
