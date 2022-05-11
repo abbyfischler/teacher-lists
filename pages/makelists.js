@@ -42,7 +42,7 @@ export default function MakeLists() {
           />
           <input
             type="file"
-            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             {...register("imageUpload", {
               required: { value: true, message: "You need an image." },
             })}
@@ -51,7 +51,7 @@ export default function MakeLists() {
             Location
           </label>
           <input
-            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             type="text"
             id="location"
             placeholder="Los Angeles"
@@ -63,7 +63,7 @@ export default function MakeLists() {
             Bio
           </label>
           <input
-            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             type="text"
             id="bio"
             placeholder="I am a classroom from XXXXXX"
@@ -75,7 +75,7 @@ export default function MakeLists() {
             Wishlist link
           </label>
           <input
-            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             type="text"
             id="wishlist"
             placeholder="amazon.com/"
