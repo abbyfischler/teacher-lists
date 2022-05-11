@@ -32,7 +32,7 @@ export default function MakeLists() {
             Teacher Name (required)
           </label>
           <input
-            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600"
+            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             type="text"
             id="teachername"
             placeholder="Dr. Spell"
