@@ -9,7 +9,7 @@ export default function MakeLists() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted, isSubmitting},
   } = useForm();
 
   const onSubmit = async (d) => {
@@ -122,7 +122,11 @@ export default function MakeLists() {
             type="submit"
             className="bg-white text-maroonx-11 hover:bg-maroonx-11 hover:text-white rounded-xl font-bold p-3 w-1/2 mx-auto text-xl"
             value="Submit"
+            disabled={isSubmitting}
           />
+          {isSubmitted && (
+                    <div className="text-green-500">List created!</div>
+                )}
         </form>
       </section>
     </>
