@@ -17,7 +17,7 @@ export default function MakeLists() {
     let { url } = await uploadToS3(file);
     console.log(url);
     axios.post(
-      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${url}`
+      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${encodeURIComponent(url)}`
     );
   };
 
