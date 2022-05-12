@@ -9,7 +9,7 @@ export default function Home() {
     <div className="dark:text-white dark:bg-black">
       <main>
         <section>
-          <p className="text-center my-20  w-2/3 mx-auto text-xl m-2">
+          <p className="text-center my-9  w-2/3 mx-auto text-xl m-2">
             Schools and school districts don’t always provide enough funding for
             teachers to provide everything they need for their students.
             Teachers end up spending their own money on buying supplies for
@@ -19,7 +19,7 @@ export default function Home() {
             teacher’s wish list!
           </p>
         </section>
-        <section className="bg-geruleancrayola justify-center dark:text-black py-10 flex flex-row space-x-4">
+        <section className="bg-geruleancrayola justify-center dark:text-black py-10 flex flex-col space-x-4 md:flex-row items-center">
           <h1 className="text-center text-5xl m-4 ">
             Are you a teacher who wants to add your list?
           </h1>
