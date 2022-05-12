@@ -24,7 +24,7 @@ export default function Nav() {
           
       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-6 mt-4 sm:mt-0">
         <li>
-          <img src="/logo.png" className="w-28 h-28"></img>
+          <Link href="/"><img src="/logo.png" className="w-28 h-28"></img></Link>
           </li>
         <ul className={`mx-auto sm:mx-0 flex flex-row space-x-5`}>
           {links.map(({ href, label }) => (
