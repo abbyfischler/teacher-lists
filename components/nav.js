@@ -8,6 +8,7 @@ const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Make List", href: "/makelists" },
+  { label: "How to Make List", href: "/how2makelist" },
 ];
 
 export default function Nav() {
