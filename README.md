@@ -18,8 +18,8 @@ npm run dev
 -- For media inquries please email abigail.fischler@gmail.com
 
 ## Acknowledgement
--- Thank you so much Sarthak for your help. Your guidance and patience has been invaluable and I so appreciate you taking the time out of your busy schedule and life to help me code this.
---  Thank you Dr. Spell for your design advice and help through the process.
+- Thank you so much Sarthak for your help. Your guidance and patience has been invaluable and I so appreciate you taking the time out of your busy schedule and life to help me code this.
+- Thank you Dr. Spell for your design advice and help through the process.
 
 ## Development
 Want to contribute? Great! Please submit a PR.
