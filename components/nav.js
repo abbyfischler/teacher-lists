@@ -8,7 +8,7 @@ const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Make List", href: "/makelists" },
-  { label: "How to Make List", href: "/how2makelist" },
+  { label: "How to Make List", href: "/howtomakelist" },
 ];
 
 export default function Nav() {

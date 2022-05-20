@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.0",
+    "@mdx-js/loader": "^2.1.1",
+    "@next/mdx": "^12.1.6",
     "airtable-plus": "^1.0.4",
     "arraybuffer-to-buffer": "^0.0.7",
     "aws-sdk": "^2.1127.0",
