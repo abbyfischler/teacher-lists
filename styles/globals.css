@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-h1{
- 
-}
 
 html.dark {
     color: #ffffff;
