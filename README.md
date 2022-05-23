@@ -22,7 +22,7 @@ npm run dev
 - Thank you Dr. Spell for your design advice and help through the process.
 
 ## Development
-Want to contribute? Great! Please submit a PR.
+Want to contribute? Great! Please submit a PR and create an issue.
 
 ## License
 
