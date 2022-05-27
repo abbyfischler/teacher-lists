@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import Footer from "../components/footer";
 import Nav from "../components/nav";
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider defaultTheme="system" attribute="class">

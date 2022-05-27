@@ -40,8 +40,9 @@ export default function MakeLists() {
               required: { value: true, message: "You need a teacher name." },
             })}
           />
+
           <input
-            type="file"
+        type="file" class="custom-file-input"
             className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             {...register("imageUpload", {
               required: { value: true, message: "You need an image." },
