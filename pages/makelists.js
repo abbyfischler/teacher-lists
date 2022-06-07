@@ -9,7 +9,7 @@ export default function MakeLists() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted, isSubmitting },
+    formState: { errors, isSubmitted, isSubmitting},
   } = useForm();
 
   const onSubmit = async (d) => {
@@ -17,9 +17,7 @@ export default function MakeLists() {
     let { url } = await uploadToS3(file);
     console.log(url);
     axios.post(
-      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${
-        d.bio
-      }}&wishlist=${d.wishlist}&image=${encodeURIComponent(url)}`
+      `/api/create?teachername=${d.teacherName}&location=${d.location}&bio=${d.bio}}&wishlist=${d.wishlist}&image=${encodeURIComponent(url)}`
     );
   };
 
@@ -44,9 +42,7 @@ export default function MakeLists() {
           />
 
           <input
-            type="file"
-            class="custom-file-input"
-            className="bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
+        type="file" className="custom-file-input bg-transparent border-b-2 border-gray-400 focus-within:outline-none focus-within:border-gray-600 dark:text-black"
             {...register("imageUpload", {
               required: { value: true, message: "You need an image." },
             })}
@@ -128,7 +124,9 @@ export default function MakeLists() {
             value="Submit"
             disabled={isSubmitting}
           />
-          {isSubmitted && <div className="text-green-500">List created!</div>}
+          {isSubmitted && (
+                    <div className="text-green-500">List created!</div>
+                )}
         </form>
       </section>
     </>
